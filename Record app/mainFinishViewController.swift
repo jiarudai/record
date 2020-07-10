@@ -1,27 +1,22 @@
 //
-//  ViewController.swift
-//  Record app
+//  mainFinishViewController.swift
+//  🐷
 //
-//  Created by Judy Dai on 2020/5/5.
+//  Created by Judy Dai on 2020/5/24.
 //  Copyright © 2020 Judy Dai. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class mainFinishViewController: UIViewController {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
 }
-
-

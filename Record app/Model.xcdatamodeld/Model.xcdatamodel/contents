@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Detaildata" representedClassName="Detaildata" syncable="YES">
+        <attribute name="cameralens" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createpicturetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="diaphgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shutter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploadimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Projectdata" inverseName="camName" inverseEntity="Projectdata" syncable="YES"/>
+    </entity>
+    <entity name="Projectdata" representedClassName="Projectdata" syncable="YES">
+        <attribute name="cameraname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createfiletime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filmbrand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filmiso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filmname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isexpiry" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="camName" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Detaildata" inverseName="owner" inverseEntity="Detaildata" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Detaildata" positionX="-3804.17578125" positionY="3887.33984375" width="128" height="148"/>
+        <element name="Projectdata" positionX="-3990.80859375" positionY="3820.5625" width="128" height="150"/>
+    </elements>
+</model>
