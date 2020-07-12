@@ -14,8 +14,7 @@
 		B912FEF4246FF1F000A0B674 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF3246FF1F000A0B674 /* DetailViewController.swift */; };
 		B912FEF6246FF53A00A0B674 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF5246FF53A00A0B674 /* TableViewCell.swift */; };
 		B912FEF82470249A00A0B674 /* SelectDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF72470249A00A0B674 /* SelectDataViewController.swift */; };
-		B912FEFA247780D300A0B674 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = B912FEF9247780D300A0B674 /* AppIcon.appiconset */; };
-		B912FF002477842800A0B674 /* pig.png in Resources */ = {isa = PBXBuildFile; fileRef = B912FEFF2477842800A0B674 /* pig.png */; };
+		B912FEFA247780D300A0B674 /* iOS in Resources */ = {isa = PBXBuildFile; fileRef = B912FEF9247780D300A0B674 /* iOS */; };
 		B912FF02247A390500A0B674 /* mainINGTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FF01247A390500A0B674 /* mainINGTableViewCell.swift */; };
 		B912FF04247A3BEA00A0B674 /* mainINGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FF03247A3BEA00A0B674 /* mainINGViewController.swift */; };
 		B912FF06247A3CDC00A0B674 /* mainFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FF05247A3CDC00A0B674 /* mainFinishViewController.swift */; };
@@ -40,8 +39,7 @@
 		B912FEF3246FF1F000A0B674 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B912FEF5246FF53A00A0B674 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B912FEF72470249A00A0B674 /* SelectDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataViewController.swift; sourceTree = "<group>"; };
-		B912FEF9247780D300A0B674 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = ../../../Desktop/iOS/AppIcon.appiconset; sourceTree = "<group>"; };
-		B912FEFF2477842800A0B674 /* pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pig.png; path = ../../../Desktop/pig.png; sourceTree = "<group>"; };
+		B912FEF9247780D300A0B674 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = ../../Desktop/iOS; sourceTree = "<group>"; };
 		B912FF01247A390500A0B674 /* mainINGTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainINGTableViewCell.swift; sourceTree = "<group>"; };
 		B912FF03247A3BEA00A0B674 /* mainINGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainINGViewController.swift; sourceTree = "<group>"; };
 		B912FF05247A3CDC00A0B674 /* mainFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFinishViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +117,7 @@
 				B90729DF248572960030F76E /* Projectdatabase.swift */,
 				B912FEE3246FD6EB00A0B674 /* Model.xcdatamodeld */,
 				B9F4142324615EF40026EF8F /* Assets.xcassets */,
-				B912FEFF2477842800A0B674 /* pig.png */,
-				B912FEF9247780D300A0B674 /* AppIcon.appiconset */,
+				B912FEF9247780D300A0B674 /* iOS */,
 				B9F4142524615EF40026EF8F /* LaunchScreen.storyboard */,
 				B9F4142824615EF40026EF8F /* Info.plist */,
 			);
@@ -185,8 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B912FF002477842800A0B674 /* pig.png in Resources */,
-				B912FEFA247780D300A0B674 /* AppIcon.appiconset in Resources */,
+				B912FEFA247780D300A0B674 /* iOS in Resources */,
 				B9F4142724615EF40026EF8F /* LaunchScreen.storyboard in Resources */,
 				B9F4142424615EF40026EF8F /* Assets.xcassets in Resources */,
 				B9F4142224615EF10026EF8F /* Main.storyboard in Resources */,
