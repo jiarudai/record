@@ -91,7 +91,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "SelectDatatoDetailViewController", sender: self)
+        performSegue(withIdentifier: "SelectDataDetailViewController", sender: self)
     }
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete{
@@ -103,6 +103,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func BtnaddDataClick(_ sender: Any) {
         let selectDataVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectDataViewController") as! SelectDataViewController
+        selectDataVC.owner = self.owner
         self.navigationController?.pushViewController(selectDataVC, animated: true)
     }
     
