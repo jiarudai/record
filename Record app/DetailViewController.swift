@@ -65,7 +65,25 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
         destination.owner = owner
-        print(destination.owner ?? "123")
+    }
+    
+    func deleteOwner(at indexPath: IndexPath) {
+        guard let owners = owner?.detaildata?[indexPath.row],
+            let managedContext = owners.managedObjectContext else {
+                return
+        }
+        managedContext.delete(owners)
+        
+        do {
+            try managedContext.save()
+            
+            detailtableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Could not delete it")
+            
+            detailtableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,12 +111,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "SelectDataDetailViewController", sender: self)
     }
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete{
-//            detaildata = DatabaseHelper.shareInstance.deleteFilmDetailData(index: indexPath.row)
-//            self.detailtableView.deleteRows(at: [indexPath], with: .automatic)
-//        }
-//    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            deleteOwner(at: indexPath)
+        }
+    }
     
     
     @IBAction func BtnaddDataClick(_ sender: Any) {
