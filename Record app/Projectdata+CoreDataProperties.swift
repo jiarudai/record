@@ -2,7 +2,7 @@
 //  Projectdata+CoreDataProperties.swift
 //  🐷
 //
-//  Created by Judy Dai on 2020/7/4.
+//  Created by Judy Dai on 2020/8/2.
 //  Copyright © 2020 Judy Dai. All rights reserved.
 //
 //
