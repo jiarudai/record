@@ -273,7 +273,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-fm-PeT">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-fm-PeT">
                                                     <rect key="frame" x="14" y="34" width="90" height="70"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jey-yi-IdE">
@@ -317,8 +317,9 @@
                                                 <constraint firstItem="buH-V3-eda" firstAttribute="top" secondItem="Jey-yi-IdE" secondAttribute="bottom" constant="8" symbolic="YES" id="xy4-CS-MKV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
-                                            <outlet property="imageupload" destination="QOQ-fm-PeT" id="IZa-En-sAq"/>
+                                            <outlet property="imagephotolibrary" destination="QOQ-fm-PeT" id="ren-Hn-Ryj"/>
                                             <outlet property="lblcameralens" destination="buH-V3-eda" id="1vI-nz-EtM"/>
                                             <outlet property="lblcreatepicturetime" destination="Jey-yi-IdE" id="87Q-5E-8XP"/>
                                             <outlet property="lbldiaphgram" destination="5E0-1Q-beR" id="9tA-Yh-ByM"/>
@@ -347,6 +348,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mC-Tu-wrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gYz-qM-hZq"/>
             </objects>
             <point key="canvasLocation" x="3717.5999999999999" y="-394.45277361319341"/>
         </scene>
@@ -476,7 +478,7 @@
                         <outlet property="diaphgramDataPickertxt" destination="mgt-zV-JSw" id="xJV-uj-xW9"/>
                         <outlet property="filtertxt" destination="9fQ-3c-NSS" id="UHY-85-Sgz"/>
                         <outlet property="shutterPickertxt" destination="3rv-oW-hBV" id="EwQ-Jo-uQE"/>
-                        <segue destination="lBa-BI-e71" kind="show" identifier="SelectDatatoDetailViewController" id="6Mk-4V-2Bq"/>
+                        <segue destination="lBa-BI-e71" kind="show" identifier="SelectDataDetailViewController" id="6Mk-4V-2Bq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zt-Bf-hln" userLabel="First Responder" sceneMemberID="firstResponder"/>

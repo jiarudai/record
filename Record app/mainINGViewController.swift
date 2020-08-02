@@ -11,14 +11,14 @@ import CoreData
 
 class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-//    var projectdata = [Projectdata]()
+
     var owners: [Projectdata] = []
     
     @IBOutlet weak var projectTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        projectdata = Projectdatabase.shareInstance.getFilmProjectData()
+        
         projectTableView.delegate = self
         projectTableView.dataSource = self
         self.projectTableView.reloadData()
@@ -27,8 +27,6 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        projectdata = Projectdatabase.shareInstance.getFilmProjectData()
-//        projectTableView.reloadData()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -84,8 +82,6 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "DetailViewController", sender: self)
-//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

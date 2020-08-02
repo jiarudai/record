@@ -13,7 +13,6 @@ import CoreData
 @objc(Projectdata)
 public class Projectdata: NSManagedObject {
     var detaildata: [Detaildata]? {
-        print(self.camName?.array as? [Detaildata] ?? "資料")
         return self.camName?.array as? [Detaildata]
     }
 
@@ -35,11 +34,3 @@ public class Projectdata: NSManagedObject {
         self.isexpiry = isexpiry
     }
 }
-//
-//extension Projectdata {
-//
-//    func addToCamName(value:Detaildata) {
-//        let items = self.mutableSetValue(forKey: "camName")
-//        items.add(value)
-//    }
-//}

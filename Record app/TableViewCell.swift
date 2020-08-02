@@ -9,9 +9,10 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
     
-    @IBOutlet weak var imageupload: UIImageView!
+    
+    
+    @IBOutlet weak var imagephotolibrary: UIImageView!
     
     @IBOutlet weak var lblcreatepicturetime: UILabel!
     

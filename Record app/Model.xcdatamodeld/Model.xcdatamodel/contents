@@ -6,7 +6,7 @@
         <attribute name="diaphgram" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="filter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shutter" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="uploadimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="uploadimage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Projectdata" inverseName="camName" inverseEntity="Projectdata" syncable="YES"/>
     </entity>
     <entity name="Projectdata" representedClassName="Projectdata" syncable="YES">
@@ -20,6 +20,6 @@
     </entity>
     <elements>
         <element name="Detaildata" positionX="-3804.17578125" positionY="3887.33984375" width="128" height="148"/>
-        <element name="Projectdata" positionX="-3990.80859375" positionY="3820.5625" width="128" height="150"/>
+        <element name="Projectdata" positionX="-3990.80859375" positionY="3820.5625" width="128" height="148"/>
     </elements>
 </model>

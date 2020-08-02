@@ -14,10 +14,10 @@ class AddProjectViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBOutlet weak var selectprojectdataTableView: UITableView!
     
-    let camera = ["12345678","22222","33333333"]
-    let filmbrand = ["ABCDEW","LOKKFEK"]
-    let filmname = ["abc","efg"]
-    let filmiso = ["100","200"]
+    let camera = ["12345678","3333","你是豬"]
+    let filmbrand = ["ABCDEW","LOKKFEK","adfggff"]
+    let filmname = ["abc","efg","def"]
+    let filmiso = ["100","200","300"]
     let isexpiry = ["expiry","unexpiry"]
     
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ class AddProjectViewController: UIViewController,UITableViewDelegate,UITableView
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd"
             let currenttime = formatter.string(from: date)
-            let dict = ["createfiletime":currenttime,"cameraname":camera[indexPath.row],"filmbrand":filmbrand[indexPath.row],"filmname":filmname[indexPath.row],"filmiso":filmiso[indexPath.row],"isexpiry":isexpiry[indexPath.row]]
+            let dict = ["createfiletime":currenttime, "cameraname":camera[indexPath.row], "filmbrand":filmbrand[indexPath.row], "filmname":filmname[indexPath.row], "filmiso":filmiso[indexPath.row], "isexpiry":isexpiry[indexPath.row]]
             Projectdatabase.shareInstance.save(object: dict)
             
             self.navigationController?.popToRootViewController(animated: true)

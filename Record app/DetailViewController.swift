@@ -11,9 +11,6 @@ import CoreData
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-//    var detaildata = [Detaildata]()
-//    var detaildatas: [Detaildata] = []
-    
     var owner: Projectdata?
     {
         didSet{
@@ -24,33 +21,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var detailtableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        detaildata = DatabaseHelper.shareInstance.getFilmDetailData()
+        
         detailtableView.dataSource = self
         detailtableView.delegate = self
         self.detailtableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//        detaildata = DatabaseHelper.shareInstance.getFilmDetailData()
         self.detailtableView.reloadData()
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//            return
-//        }
-//
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        let fetchRequest: NSFetchRequest<Detaildata> = Detaildata.fetchRequest()
-//
-//        do {
-//            detaildata = try managedContext.fetch(fetchRequest)
-//            self.detailtableView.reloadData()
-//        }catch{
-//            print("cant get data")
-//        }
 
     }
     
@@ -67,40 +50,32 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         destination.owner = owner
     }
     
-    func deleteOwner(at indexPath: IndexPath) {
-        guard let owners = owner?.detaildata?[indexPath.row],
-            let managedContext = owners.managedObjectContext else {
-                return
-        }
-        managedContext.delete(owners)
-        
-        do {
-            try managedContext.save()
-            
-            detailtableView.deleteRows(at: [indexPath], with: .automatic)
-        } catch {
-            print("Could not delete it")
-            
-            detailtableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-        
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("projectdata的detaildata", owner?.detaildata?.count ?? "吼呦出來")
         return owner?.detaildata?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-//        let detaildatas = detaildata[indexPath.row]
+        
         if let detaildatas = owner?.detaildata?[indexPath.row] {
             cell.lblcreatepicturetime.text = detaildatas.createpicturetime
             cell.lblcameralens.text = detaildatas.cameralens
             cell.lbldiaphgram.text = detaildatas.diaphgram
             cell.lblshutter.text = detaildatas.shutter
             cell.lblfilter.text = detaildatas.filter
-        }
+            if cell.imagephotolibrary.image == nil {
+                cell.imagephotolibrary.image = UIImage(named: "detaildefaultimage")
+            }
+            if let image = detaildatas.uploadimage {
+                    DispatchQueue.main.async {
+                        cell.imagephotolibrary.image = UIImage(data: image as Data)
+                    }
+            }
+
+            }
+
+        print("image in core data", indexPath.row, cell.imagephotolibrary.image as Any)
         return cell
     }
     
@@ -109,8 +84,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "SelectDataDetailViewController", sender: self)
+        print("select : ", indexPath.row)
+        self.didclickedImageView()
     }
+
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
@@ -125,4 +102,68 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.pushViewController(selectDataVC, animated: true)
     }
     
+    func deleteOwner(at indexPath: IndexPath) {
+        guard let owners = owner?.detaildata?[indexPath.row],
+            let managedContext = owners.managedObjectContext
+            else {
+                return
+        }
+        managedContext.delete(owners)
+
+        do {
+            try managedContext.save()
+            detailtableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Could not delete it")
+            detailtableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func didclickedImageView() {
+        let imagePicker = UIImagePickerController()
+        let isAvailable = UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        if isAvailable {
+            imagePicker.sourceType = .camera
+        }
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+extension DetailViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:  [UIImagePickerController.InfoKey : Any] ) {
+
+        guard let choseImage = info[.editedImage] as? UIImage else {
+            return
+        }
+
+        let imageData = choseImage.pngData()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+
+        guard let detaildata = NSEntityDescription.insertNewObject(forEntityName: "Detaildata", into: context) as? Detaildata else {
+            return
+        }
+        detaildata.uploadimage = imageData as NSData?
+        owner?.addToCamName(detaildata)
+        do {
+            try detaildata.managedObjectContext?.save()
+        } catch {
+            print("Could not save. \(error), \(error.localizedDescription)")
+        }
+        print("路徑 : ",NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last!);
+
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
+        self.dismiss(animated: true, completion: nil)
+    }
 }

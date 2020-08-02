@@ -16,11 +16,7 @@ class SelectDataViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     @IBOutlet weak var shutterPickertxt: UITextField!
     @IBOutlet weak var filtertxt: UITextField!
     
-    var owner: Projectdata?{
-        didSet{
-            print("owner(PROJECTDATA) value:\(String(describing: owner))")
-        }
-    }
+    var owner: Projectdata?
     
     var Cameralens = ["20","50"]
     var Diaphragm = ["f/1.8","f/2.8"]
@@ -99,19 +95,15 @@ class SelectDataViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
         let currenttime = formatter.string(from: date)
-//        let dict = ["createpicturetime":currenttime,"cameralens":cameralensPickertxt.text ?? 0 ,"diaphgram":diaphgramDataPickertxt.text ?? 0,"shutter":shutterPickertxt.text ?? 0,"filter":filtertxt.text ?? 0] as [String : Any]
-//        DatabaseHelper.shareInstance.save(object: dict as! [String : String])
+
         let createpicturetime = currenttime
         let cameralens = cameralensPickertxt.text ?? ""
         let diaphgram = diaphgramDataPickertxt.text ?? ""
         let shutter = shutterPickertxt.text ?? ""
         let filter = filtertxt.text ?? ""
 
-        if let detaildatas = Detaildata(cameralens: cameralens, createpicturetime: createpicturetime, diaphgram: diaphgram, filter: filter, shutter: shutter) {
+        if let detaildatas = Detaildata(cameralens: cameralens, createpicturetime: createpicturetime, diaphgram: diaphgram, filter: filter, shutter: shutter, uploadimage: nil) {
             owner?.addToCamName(detaildatas)
-            print(owner ?? "OWNER值在哪")
-            print(owner?.addToCamName(detaildatas) ?? "addtoCamName值？")
-            
             do {
                 try detaildatas.managedObjectContext?.save()
                 self.navigationController?.popViewController(animated: true)
