@@ -21,6 +21,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var detailtableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,13 +69,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.imagephotolibrary.image = UIImage(named: "detaildefaultimage")
             }
             if let image = detaildatas.uploadimage {
-                    DispatchQueue.main.async {
-                        cell.imagephotolibrary.image = UIImage(data: image as Data)
-                    }
+                DispatchQueue.main.async {
+                    cell.imagephotolibrary.image = UIImage(data: image as Data)
+                }
             }
-
-            }
-
+        }
+        
         print("image in core data", indexPath.row, cell.imagephotolibrary.image as Any)
         return cell
     }
@@ -135,35 +135,46 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 extension DetailViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:  [UIImagePickerController.InfoKey : Any] ) {
-
+        
         guard let choseImage = info[.editedImage] as? UIImage else {
             return
         }
 
         let imageData = choseImage.pngData()
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-
+        
         let context = appDelegate.persistentContainer.viewContext
-
-        guard let detaildata = NSEntityDescription.insertNewObject(forEntityName: "Detaildata", into: context) as? Detaildata else {
+        
+        guard let detaildata = self.owner?.detaildata else {
             return
         }
-        detaildata.uploadimage = imageData as NSData?
-        owner?.addToCamName(detaildata)
-        do {
-            try detaildata.managedObjectContext?.save()
-        } catch {
-            print("Could not save. \(error), \(error.localizedDescription)")
+        
+        var isInsertNewData: Bool = true
+        for detail in detaildata {
+            if detail.uploadimage == nil {
+                detail.uploadimage = imageData as NSData?
+                isInsertNewData = false
+                break
+            }
         }
+        if isInsertNewData {
+            guard let detaildata = NSEntityDescription.insertNewObject(forEntityName: "Detaildata", into: context) as? Detaildata else {
+                return
+            }
+            detaildata.uploadimage = imageData as NSData?
+            owner?.addToCamName(detaildata)
+        }
+        
+        appDelegate.saveContext()
         print("路徑 : ",NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last!);
-
+        
         self.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-
         self.dismiss(animated: true, completion: nil)
     }
 }
