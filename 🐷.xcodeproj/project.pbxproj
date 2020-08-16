@@ -20,15 +20,16 @@
 		B912FF06247A3CDC00A0B674 /* mainFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FF05247A3CDC00A0B674 /* mainFinishViewController.swift */; };
 		B912FF08247A501900A0B674 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FF07247A501900A0B674 /* AddProjectViewController.swift */; };
 		B92C6E3C24B0488D00C722E2 /* Detaildata+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92C6E3824B0488D00C722E2 /* Detaildata+CoreDataClass.swift */; };
-		B92C6E3D24B0488D00C722E2 /* Detaildata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92C6E3924B0488D00C722E2 /* Detaildata+CoreDataProperties.swift */; };
 		B92C6E3E24B0488D00C722E2 /* Projectdata+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92C6E3A24B0488D00C722E2 /* Projectdata+CoreDataClass.swift */; };
-		B92C6E3F24B0488D00C722E2 /* Projectdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92C6E3B24B0488D00C722E2 /* Projectdata+CoreDataProperties.swift */; };
 		B95129A2247A601E0001F6C5 /* SelectProjectDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95129A1247A601E0001F6C5 /* SelectProjectDataTableViewCell.swift */; };
+		B972CA8824D6B6570047195A /* Projectdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972CA8724D6B6570047195A /* Projectdata+CoreDataProperties.swift */; };
+		B972CA8A24D6B6950047195A /* Detaildata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972CA8924D6B6950047195A /* Detaildata+CoreDataProperties.swift */; };
 		B9F4141D24615EF10026EF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4141C24615EF10026EF8F /* AppDelegate.swift */; };
 		B9F4141F24615EF10026EF8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4141E24615EF10026EF8F /* ViewController.swift */; };
 		B9F4142224615EF10026EF8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F4142024615EF10026EF8F /* Main.storyboard */; };
 		B9F4142424615EF40026EF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F4142324615EF40026EF8F /* Assets.xcassets */; };
 		B9F4142724615EF40026EF8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F4142524615EF40026EF8F /* LaunchScreen.storyboard */; };
+		B9FD992524E303B800BDD38F /* mainFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD992424E303B800BDD38F /* mainFinishTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +46,10 @@
 		B912FF05247A3CDC00A0B674 /* mainFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFinishViewController.swift; sourceTree = "<group>"; };
 		B912FF07247A501900A0B674 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
 		B92C6E3824B0488D00C722E2 /* Detaildata+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detaildata+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		B92C6E3924B0488D00C722E2 /* Detaildata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detaildata+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B92C6E3A24B0488D00C722E2 /* Projectdata+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Projectdata+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		B92C6E3B24B0488D00C722E2 /* Projectdata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Projectdata+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B95129A1247A601E0001F6C5 /* SelectProjectDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProjectDataTableViewCell.swift; sourceTree = "<group>"; };
+		B972CA8724D6B6570047195A /* Projectdata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Projectdata+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B972CA8924D6B6950047195A /* Detaildata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Detaildata+CoreDataProperties.swift"; path = "../Detaildata+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B9F4141924615EF00026EF8F /* 🐷.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "🐷.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F4141C24615EF10026EF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F4141E24615EF10026EF8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		B9F4142324615EF40026EF8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9F4142624615EF40026EF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9F4142824615EF40026EF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9FD992424E303B800BDD38F /* mainFinishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFinishTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				B92C6E3824B0488D00C722E2 /* Detaildata+CoreDataClass.swift */,
-				B92C6E3924B0488D00C722E2 /* Detaildata+CoreDataProperties.swift */,
+				B972CA8924D6B6950047195A /* Detaildata+CoreDataProperties.swift */,
+				B972CA8724D6B6570047195A /* Projectdata+CoreDataProperties.swift */,
 				B92C6E3A24B0488D00C722E2 /* Projectdata+CoreDataClass.swift */,
-				B92C6E3B24B0488D00C722E2 /* Projectdata+CoreDataProperties.swift */,
 				B912FEF5246FF53A00A0B674 /* TableViewCell.swift */,
 				B912FEF3246FF1F000A0B674 /* DetailViewController.swift */,
 				B9F4141C24615EF10026EF8F /* AppDelegate.swift */,
@@ -110,6 +112,7 @@
 				B95129A1247A601E0001F6C5 /* SelectProjectDataTableViewCell.swift */,
 				B912FF07247A501900A0B674 /* AddProjectViewController.swift */,
 				B912FF05247A3CDC00A0B674 /* mainFinishViewController.swift */,
+				B9FD992424E303B800BDD38F /* mainFinishTableViewCell.swift */,
 				B912FF03247A3BEA00A0B674 /* mainINGViewController.swift */,
 				B912FF01247A390500A0B674 /* mainINGTableViewCell.swift */,
 				B912FEF72470249A00A0B674 /* SelectDataViewController.swift */,
@@ -198,18 +201,19 @@
 			files = (
 				B912FEF4246FF1F000A0B674 /* DetailViewController.swift in Sources */,
 				B912FEF6246FF53A00A0B674 /* TableViewCell.swift in Sources */,
+				B972CA8A24D6B6950047195A /* Detaildata+CoreDataProperties.swift in Sources */,
 				B912FF08247A501900A0B674 /* AddProjectViewController.swift in Sources */,
 				B912FEEE246FD8F000A0B674 /* DatabaseHelper.swift in Sources */,
 				B92C6E3C24B0488D00C722E2 /* Detaildata+CoreDataClass.swift in Sources */,
 				B90729E0248572960030F76E /* Projectdatabase.swift in Sources */,
 				B912FF02247A390500A0B674 /* mainINGTableViewCell.swift in Sources */,
-				B92C6E3F24B0488D00C722E2 /* Projectdata+CoreDataProperties.swift in Sources */,
+				B972CA8824D6B6570047195A /* Projectdata+CoreDataProperties.swift in Sources */,
+				B9FD992524E303B800BDD38F /* mainFinishTableViewCell.swift in Sources */,
 				B9F4141F24615EF10026EF8F /* ViewController.swift in Sources */,
 				B912FEF82470249A00A0B674 /* SelectDataViewController.swift in Sources */,
 				B912FF04247A3BEA00A0B674 /* mainINGViewController.swift in Sources */,
 				B9F4141D24615EF10026EF8F /* AppDelegate.swift in Sources */,
 				B912FF06247A3CDC00A0B674 /* mainFinishViewController.swift in Sources */,
-				B92C6E3D24B0488D00C722E2 /* Detaildata+CoreDataProperties.swift in Sources */,
 				B912FEE5246FD6EB00A0B674 /* Model.xcdatamodeld in Sources */,
 				B95129A2247A601E0001F6C5 /* SelectProjectDataTableViewCell.swift in Sources */,
 				B92C6E3E24B0488D00C722E2 /* Projectdata+CoreDataClass.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class mainFinishViewController: UIViewController {
 
+    @IBOutlet weak var FinishTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
