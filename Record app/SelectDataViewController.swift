@@ -18,9 +18,9 @@ class SelectDataViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     var owner: Projectdata?
     
-    var Cameralens = ["20","50"]
+    var Cameralens = ["20","50","80"]
     var Diaphragm = ["f/1.8","f/2.8"]
-    var Shutter = ["2","5"]
+    var Shutter = ["2","5","7"]
     var activeDataArray = ""
     
     var picker = UIPickerView()

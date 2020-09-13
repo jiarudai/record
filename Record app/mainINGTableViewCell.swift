@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol mainINGTableViewDelegate {
+    func mainINGTableViewCellDidFinishStatus(_ sender: mainINGTableViewCell)
+}
+
 class mainINGTableViewCell: UITableViewCell {
 
-
+    var delegate: mainINGTableViewDelegate?
+    
     @IBOutlet weak var Lblcreatetime: UILabel!
     
     @IBOutlet weak var Lblcameraname: UILabel!
@@ -23,19 +28,19 @@ class mainINGTableViewCell: UITableViewCell {
     
     @IBOutlet weak var Lblisexpiry: UILabel!
     
-
-    @IBAction func btnmovetofinishstatus(_ sender: Any) {
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+  
+    @IBAction func btnFinishStatus(_ sender: Any) {
+        delegate?.mainINGTableViewCellDidFinishStatus(self)
+    }
+    
 }

@@ -15,14 +15,11 @@ class mainFinishTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblfinishcameraname: UILabel!
     
-    
     @IBOutlet weak var lblfinishfilmbrand: UILabel!
     
     @IBOutlet weak var lblfinishfilname: UILabel!
     
-    
     @IBOutlet weak var lblfinishfilmiso: UILabel!
-    
     
     @IBOutlet weak var lblfinishfilmexpiry: UILabel!
     
@@ -36,5 +33,4 @@ class mainFinishTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
