@@ -12,28 +12,40 @@ import CoreData
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var owner: Projectdata?
-    {
-        didSet{
-            print("owner value:\(String(describing: owner))")
-        }
-
-    }
+//    {
+//        didSet{
+//            print("owner value:\(String(describing: owner))")
+//        }
+    
+//    }
     
     @IBOutlet weak var detailtableView: UITableView!
     
+    @IBOutlet weak var BtnadddataClick: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailtableView.dataSource = self
         detailtableView.delegate = self
+//        print("viewDidLoad=" ,owner?.detaildata?.count)
+        if owner?.detaildata?.count ?? 0 >= 5 {
+            BtnadddataClick.isHidden = true
+        }else{
+            BtnadddataClick.isHidden = false
+        }
         self.detailtableView.reloadData()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+//        print("viewWillAppear=" ,owner?.detaildata?.count)
+        if owner?.detaildata?.count ?? 0 >= 5 {
+            BtnadddataClick.isHidden = true
+        }else{
+            BtnadddataClick.isHidden = false
+        }
         self.detailtableView.reloadData()
 
     }
@@ -74,8 +86,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-        
-        print("image in core data", indexPath.row, cell.imagephotolibrary.image as Any)
         return cell
     }
     
@@ -178,3 +188,5 @@ extension DetailViewController : UIImagePickerControllerDelegate,UINavigationCon
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+

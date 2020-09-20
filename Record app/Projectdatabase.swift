@@ -52,8 +52,4 @@ class Projectdatabase{
         }
         return projectdata
     }
-
-    //    func movetoFinishProjectData(index:Int) -> [Projectdata]{
-    //
-    //    }
 }

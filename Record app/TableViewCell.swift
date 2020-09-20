@@ -10,8 +10,6 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    
-    
     @IBOutlet weak var imagephotolibrary: UIImageView!
     
     @IBOutlet weak var lblcreatepicturetime: UILabel!
