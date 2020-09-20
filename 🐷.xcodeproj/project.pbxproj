@@ -10,7 +10,6 @@
 		B90729E0248572960030F76E /* Projectdatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90729DF248572960030F76E /* Projectdatabase.swift */; };
 		B912FEE5246FD6EB00A0B674 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B912FEE3246FD6EB00A0B674 /* Model.xcdatamodeld */; };
 		B912FEEC246FD82D00A0B674 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B912FEEB246FD82D00A0B674 /* CoreData.framework */; };
-		B912FEEE246FD8F000A0B674 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEED246FD8F000A0B674 /* DatabaseHelper.swift */; };
 		B912FEF4246FF1F000A0B674 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF3246FF1F000A0B674 /* DetailViewController.swift */; };
 		B912FEF6246FF53A00A0B674 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF5246FF53A00A0B674 /* TableViewCell.swift */; };
 		B912FEF82470249A00A0B674 /* SelectDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912FEF72470249A00A0B674 /* SelectDataViewController.swift */; };
@@ -36,7 +35,6 @@
 		B90729DF248572960030F76E /* Projectdatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projectdatabase.swift; sourceTree = "<group>"; };
 		B912FEE4246FD6EB00A0B674 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B912FEEB246FD82D00A0B674 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B912FEED246FD8F000A0B674 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		B912FEF3246FF1F000A0B674 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B912FEF5246FF53A00A0B674 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B912FEF72470249A00A0B674 /* SelectDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				B912FF03247A3BEA00A0B674 /* mainINGViewController.swift */,
 				B912FF01247A390500A0B674 /* mainINGTableViewCell.swift */,
 				B912FEF72470249A00A0B674 /* SelectDataViewController.swift */,
-				B912FEED246FD8F000A0B674 /* DatabaseHelper.swift */,
 				B90729DF248572960030F76E /* Projectdatabase.swift */,
 				B912FEE3246FD6EB00A0B674 /* Model.xcdatamodeld */,
 				B9F4142324615EF40026EF8F /* Assets.xcassets */,
@@ -203,7 +200,6 @@
 				B912FEF6246FF53A00A0B674 /* TableViewCell.swift in Sources */,
 				B972CA8A24D6B6950047195A /* Detaildata+CoreDataProperties.swift in Sources */,
 				B912FF08247A501900A0B674 /* AddProjectViewController.swift in Sources */,
-				B912FEEE246FD8F000A0B674 /* DatabaseHelper.swift in Sources */,
 				B92C6E3C24B0488D00C722E2 /* Detaildata+CoreDataClass.swift in Sources */,
 				B90729E0248572960030F76E /* Projectdatabase.swift in Sources */,
 				B912FF02247A390500A0B674 /* mainINGTableViewCell.swift in Sources */,
