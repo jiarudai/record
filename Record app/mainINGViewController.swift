@@ -13,14 +13,12 @@ import Foundation
 class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,mainINGTableViewDelegate {
 
     var owners: [Projectdata] = []
-    
     @IBOutlet weak var projectTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         projectTableView.delegate = self
         projectTableView.dataSource = self
-        self.projectTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,13 +44,12 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailViewController" {
-            guard let destination = segue.destination as? DetailViewController,let selectedRow = self.projectTableView.indexPathForSelectedRow?.row else {
-                    return
-            }
-            destination.owner = owners[selectedRow]
-        
+        guard let destination = segue.destination as? DetailViewController,let selectedRow = self.projectTableView.indexPathForSelectedRow?.row else {
+            return
+            
         }
+        destination.owner = owners[selectedRow]
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
