@@ -2,7 +2,7 @@
 //  Projectdata+CoreDataProperties.swift
 //  🐷
 //
-//  Created by Judy Dai on 2020/8/2.
+//  Created by Judy Dai on 2020/9/20.
 //  Copyright © 2020 Judy Dai. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ extension Projectdata {
     @NSManaged public var filmiso: String?
     @NSManaged public var filmname: String?
     @NSManaged public var isexpiry: String?
+    @NSManaged public var isCheckFinish: Bool
     @NSManaged public var camName: NSOrderedSet?
 
 }

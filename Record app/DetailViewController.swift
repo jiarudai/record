@@ -94,7 +94,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select : ", indexPath.row)
         self.didclickedImageView()
     }
 
@@ -102,6 +101,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             deleteOwner(at: indexPath)
+            detailtableView.reloadData()
         }
     }
     
@@ -136,7 +136,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         if isAvailable {
-            imagePicker.sourceType = .camera
+            imagePicker.sourceType = .photoLibrary
         }
         self.present(imagePicker, animated: true, completion: nil)
     }

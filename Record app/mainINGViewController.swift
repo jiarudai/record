@@ -13,6 +13,13 @@ import Foundation
 class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,mainINGTableViewDelegate {
 
     var owners: [Projectdata] = []
+    {
+        didSet{
+            print("ing value:\(String(describing: owners))")
+        }
+        
+    }
+    
     @IBOutlet weak var projectTableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,6 +41,8 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Projectdata> = Projectdata.fetchRequest()
+        let preicate = NSPredicate(format: "isCheckFinish = %@" , "0" )
+        fetchRequest.predicate = preicate
 
         do {
             owners = try managedContext.fetch(fetchRequest)
@@ -109,6 +118,14 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
         let alert = UIAlertController(title: "確定已完成此項目", message: "確認後將此項目移至Finish Tab.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "確認", style: .default) { (_) in
             print("刪除此項目並將此項目顯示在 finish tab")
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            
+            appDelegate.saveContext()
             self.projectTableView.reloadData()
         }
         alert.addAction(okAction)

@@ -15,11 +15,12 @@
         <attribute name="filmbrand" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="filmiso" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="filmname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCheckFinish" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isexpiry" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="camName" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Detaildata" inverseName="owner" inverseEntity="Detaildata" syncable="YES"/>
     </entity>
     <elements>
         <element name="Detaildata" positionX="-3804.17578125" positionY="3887.33984375" width="128" height="148"/>
-        <element name="Projectdata" positionX="-3990.80859375" positionY="3820.5625" width="128" height="148"/>
+        <element name="Projectdata" positionX="-3990.80859375" positionY="3820.5625" width="128" height="165"/>
     </elements>
 </model>

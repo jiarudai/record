@@ -42,7 +42,7 @@ class mainFinishViewController: UIViewController,UITableViewDataSource,UITableVi
 
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Projectdata> = Projectdata.fetchRequest()
-        let preicate = NSPredicate(format: "isexpiry = %@" , "expiry" )
+        let preicate = NSPredicate(format: "isCheckFinish = %@" , "1" )
         fetchRequest.predicate = preicate
 
         do {
