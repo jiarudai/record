@@ -80,6 +80,7 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.Lblfilmname.text = projectdatas.filmname
         cell.Lblfilmiso.text = projectdatas.filmiso
         cell.Lblisexpiry.text = projectdatas.isexpiry
+        cell.tag = indexPath.row
         cell.delegate = self
         return cell
     }
@@ -107,28 +108,21 @@ class mainINGViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func mainINGTableViewCellDidFinishStatus(_ sender: mainINGTableViewCell) {
         
-        guard let tappedIndexPath = projectTableView.indexPath(for: sender) else {
-            return
-        }
-        
         print("sender值：",sender)
-        print("-----")
-        print("按tappedIndexPath:",tappedIndexPath)
         
         let alert = UIAlertController(title: "確定已完成此項目", message: "確認後將此項目移至Finish Tab.", preferredStyle: .alert)
+        
         let okAction = UIAlertAction(title: "確認", style: .default) { (_) in
-            print("刪除此項目並將此項目顯示在 finish tab")
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
-            }
             
-            let context = appDelegate.persistentContainer.viewContext
+            let projectdata = self.owners[sender.tag]
+            projectdata.isCheckFinish = true
             
-            
-            appDelegate.saveContext()
+            self.owners.remove(at: sender.tag)
             self.projectTableView.reloadData()
         }
+        
         alert.addAction(okAction)
+        
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         present(alert,animated: true, completion: nil)
